@@ -124,7 +124,7 @@ export default {
     const getModalidades = () => {
       const modalidades = new Set()
       universidades.forEach(uni => {
-        uni.modalidade.split('e').forEach(m => modalidades.add(m.trim()))
+        uni.modalidade.split(' e ').forEach(m => modalidades.add(m.trim()))
       })
       return [...modalidades]
     }
