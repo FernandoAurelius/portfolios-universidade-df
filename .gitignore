@@ -1,0 +1,49 @@
+# Dependências
+node_modules
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Arquivos de build e diretórios
+dist
+dist-ssr
+*.local
+.output
+.nuxt
+
+# Arquivos de log
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Diretórios e arquivos do editor
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/settings.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Arquivos de ambiente local
+.env
+.env.local
+.env.*.local
+
+# Arquivos de teste
+coverage
+/cypress/videos/
+/cypress/screenshots/
+
+# Arquivos temporários
+.temp
+.tmp
+.cache
