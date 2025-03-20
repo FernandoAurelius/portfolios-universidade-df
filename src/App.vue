@@ -17,6 +17,7 @@
         :cursos="getCursos()" 
         :graus="getGraus()" 
         :modalidades="getModalidades()" 
+        :duracoes="getDuracoes()"
         class="slide-up"
       />
       
@@ -60,7 +61,8 @@ export default {
       search: '',
       curso: '',
       grau: '',
-      modalidade: ''
+      modalidade: '',
+      duracao: ''
     })
 
     const filteredUniversidades = computed(() => {
@@ -72,7 +74,10 @@ export default {
         result = result.filter(uni => 
           uni.nome.toLowerCase().includes(searchTerm) || 
           uni.sigla.toLowerCase().includes(searchTerm) ||
-          uni.cursos.some(curso => curso.toLowerCase().includes(searchTerm)) ||
+          uni.cursos.some(curso => 
+            curso.tipo_de_graduacao !== 'Não ofertado' && 
+            curso.nome.toLowerCase().includes(searchTerm)
+          ) ||
           uni.observacoes.toLowerCase().includes(searchTerm)
         )
       }
@@ -80,18 +85,41 @@ export default {
       // Filtrar por curso
       if (filters.value.curso) {
         result = result.filter(uni => 
-          uni.cursos.some(curso => curso.toLowerCase().includes(filters.value.curso.toLowerCase()))
+          uni.cursos.some(curso => 
+            curso.tipo_de_graduacao !== 'Não ofertado' && 
+            curso.nome.toLowerCase().includes(filters.value.curso.toLowerCase())
+          )
         )
       }
       
       // Filtrar por grau
       if (filters.value.grau) {
-        result = result.filter(uni => uni.grau.includes(filters.value.grau))
+        result = result.filter(uni => 
+          uni.cursos.some(curso => 
+            curso.tipo_de_graduacao !== 'Não ofertado' && 
+            curso.tipo_de_graduacao.includes(filters.value.grau)
+          )
+        )
       }
       
       // Filtrar por modalidade
       if (filters.value.modalidade) {
-        result = result.filter(uni => uni.modalidade.includes(filters.value.modalidade))
+        result = result.filter(uni => 
+          uni.cursos.some(curso => 
+            curso.tipo_de_graduacao !== 'Não ofertado' && 
+            curso.modalidade.includes(filters.value.modalidade)
+          )
+        )
+      }
+      
+      // Filtrar por duração
+      if (filters.value.duracao) {
+        result = result.filter(uni => 
+          uni.cursos.some(curso => 
+            curso.tipo_de_graduacao !== 'Não ofertado' && 
+            curso.duracao.includes(filters.value.duracao)
+          )
+        )
       }
       
       return result
@@ -108,25 +136,54 @@ export default {
     const getCursos = () => {
       const cursos = new Set()
       universidades.forEach(uni => {
-        uni.cursos.forEach(curso => cursos.add(curso))
+        uni.cursos.forEach(curso => {
+          if (curso.tipo_de_graduacao !== 'Não ofertado') {
+            cursos.add(curso.nome)
+          }
+        })
       })
-      return [...cursos]
+      return [...cursos].sort()
     }
 
     const getGraus = () => {
       const graus = new Set()
       universidades.forEach(uni => {
-        uni.grau.split('/').forEach(g => graus.add(g.trim()))
+        uni.cursos.forEach(curso => {
+          if (curso.tipo_de_graduacao !== 'Não ofertado') {
+            graus.add(curso.tipo_de_graduacao)
+          }
+        })
       })
-      return [...graus]
+      return [...graus].sort()
     }
 
     const getModalidades = () => {
       const modalidades = new Set()
       universidades.forEach(uni => {
-        uni.modalidade.split(' e ').forEach(m => modalidades.add(m.trim()))
+        uni.cursos.forEach(curso => {
+          if (curso.tipo_de_graduacao !== 'Não ofertado' && curso.modalidade !== 'Não ofertado') {
+            curso.modalidade.split('/').forEach(m => modalidades.add(m.trim()))
+          }
+        })
       })
-      return [...modalidades]
+      return [...modalidades].sort()
+    }
+
+    const getDuracoes = () => {
+      const duracoes = new Set()
+      universidades.forEach(uni => {
+        uni.cursos.forEach(curso => {
+          if (curso.tipo_de_graduacao !== 'Não ofertado' && curso.duracao !== 'N/A') {
+            duracoes.add(curso.duracao)
+          }
+        })
+      })
+      return [...duracoes].sort((a, b) => {
+        // Ordenar por número de anos
+        const numA = parseFloat(a.replace(',', '.'));
+        const numB = parseFloat(b.replace(',', '.'));
+        return numA - numB;
+      })
     }
 
     return {
@@ -136,7 +193,8 @@ export default {
       openUniversidadeDetails,
       getCursos,
       getGraus,
-      getModalidades
+      getModalidades,
+      getDuracoes
     }
   }
 }

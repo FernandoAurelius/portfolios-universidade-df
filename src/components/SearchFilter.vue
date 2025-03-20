@@ -1,9 +1,9 @@
 <template>
-  <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+  <div class="bg-white rounded-lg shadow-lg p-4 sm:p-6 mb-8">
     <h2 class="text-2xl font-bold text-gray-800 mb-4">Encontre o curso ideal</h2>
     
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-      <div class="search-input-container">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+      <div class="search-input-container md:col-span-2 lg:col-span-3 xl:col-span-4">
         <label for="search" class="block text-gray-700 mb-2">Pesquisa por texto</label>
         <div class="relative">
           <input 
@@ -23,11 +23,11 @@
       </div>
       
       <div>
-        <label for="curso" class="block text-gray-700 mb-2">Curso</label>
+        <label for="curso" class="block text-gray-700 mb-2 text-sm sm:text-base">Curso</label>
         <select 
           id="curso" 
           v-model="filters.curso" 
-          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300"
+          class="w-full px-3 py-2 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300"
           @change="emitFilters"
         >
           <option value="">Todos os cursos</option>
@@ -36,28 +36,41 @@
       </div>
       
       <div>
-        <label for="grau" class="block text-gray-700 mb-2">Grau</label>
+        <label for="grau" class="block text-gray-700 mb-2 text-sm sm:text-base">Tipo de Graduação</label>
         <select 
           id="grau" 
           v-model="filters.grau" 
-          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300"
+          class="w-full px-3 py-2 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300"
           @change="emitFilters"
         >
-          <option value="">Todos os graus</option>
+          <option value="">Todos os tipos</option>
           <option v-for="(grau, index) in graus" :key="index" :value="grau">{{ grau }}</option>
         </select>
       </div>
       
       <div>
-        <label for="modalidade" class="block text-gray-700 mb-2">Modalidade</label>
+        <label for="modalidade" class="block text-gray-700 mb-2 text-sm sm:text-base">Modalidade</label>
         <select 
           id="modalidade" 
           v-model="filters.modalidade" 
-          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300"
+          class="w-full px-3 py-2 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300"
           @change="emitFilters"
         >
           <option value="">Todas as modalidades</option>
           <option v-for="(modalidade, index) in modalidades" :key="index" :value="modalidade">{{ modalidade }}</option>
+        </select>
+      </div>
+      
+      <div>
+        <label for="duracao" class="block text-gray-700 mb-2 text-sm sm:text-base">Duração</label>
+        <select 
+          id="duracao" 
+          v-model="filters.duracao" 
+          class="w-full px-3 py-2 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300"
+          @change="emitFilters"
+        >
+          <option value="">Todas as durações</option>
+          <option v-for="(duracao, index) in duracoes" :key="index" :value="duracao">{{ duracao }}</option>
         </select>
       </div>
     </div>
@@ -74,22 +87,40 @@
 </template>
 
 <script>
-import { reactive } from 'vue'
+import { reactive, watchEffect } from 'vue'
 
 export default {
   name: 'SearchFilter',
   props: {
     cursos: Array,
     graus: Array,
-    modalidades: Array
+    modalidades: Array,
+    duracoes: Array
   },
   setup(props, { emit }) {
     const filters = reactive({
       search: '',
       curso: '',
       grau: '',
-      modalidade: ''
+      modalidade: '',
+      duracao: ''
     })
+    
+    // Resetar filtros se a opção selecionada não existe mais nas opções disponíveis
+    watchEffect(() => {
+      if (filters.curso && props.cursos && !props.cursos.includes(filters.curso)) {
+        filters.curso = '';
+      }
+      if (filters.grau && props.graus && !props.graus.includes(filters.grau)) {
+        filters.grau = '';
+      }
+      if (filters.modalidade && props.modalidades && !props.modalidades.includes(filters.modalidade)) {
+        filters.modalidade = '';
+      }
+      if (filters.duracao && props.duracoes && !props.duracoes.includes(filters.duracao)) {
+        filters.duracao = '';
+      }
+    });
     
     const emitFilters = () => {
       emit('filter', { ...filters })
@@ -100,6 +131,7 @@ export default {
       filters.curso = ''
       filters.grau = ''
       filters.modalidade = ''
+      filters.duracao = ''
       emitFilters()
     }
     
@@ -111,3 +143,23 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+/* Garantir que o dropdown mostre o texto completo */
+select {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Melhorar acessibilidade com foco */
+select:focus, input:focus {
+  outline: none;
+}
+
+@media (max-width: 640px) {
+  select, input {
+    font-size: 14px;
+  }
+}
+</style>

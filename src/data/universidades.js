@@ -1,163 +1,562 @@
 export const universidades = [
   {
     id: 1,
-    sigla: "UNICEUB",
-    nome: "Centro Universitário de Brasília",
+    nome: "Centro Universitário de Brasília (UniCEUB)",
+    sigla: "UniCEUB",
     cursos: [
-      "Ciência da Computação", 
-      "Sistemas de Informação", 
-      "Análise e Desenvolvimento de Sistemas"
+      {
+        nome: "Sistemas de Informação",
+        tipo_de_graduacao: "Bacharelado",
+        modalidade: "Presencial/EaD",
+        duracao: "4 anos"
+      },
+      {
+        nome: "Licenciatura em Computação",
+        tipo_de_graduacao: "Licenciatura",
+        modalidade: "Presencial",
+        duracao: "4 anos"
+      },
+      {
+        nome: "Gestão de Tecnologia da Informação",
+        tipo_de_graduacao: "Tecnólogo",
+        modalidade: "EaD",
+        duracao: "2,5 anos"
+      }
     ],
-    grau: "Bacharelado/Tecnólogo",
-    modalidade: "Presencial e EAD",
+    link: "https://www.uniceub.br/pdp/graduacao-ead/ti/gestao-de-tecnologia-da-informacao",
     observacoes: "Destaca-se pela ênfase prática e parcerias com o setor tecnológico",
-    logo: "uniceub.png",
     cor: "bg-red-600"
   },
   {
     id: 2,
-    sigla: "UDF",
-    nome: "Centro Universitário do Distrito Federal",
+    nome: "Universidade Católica de Brasília (UCB)",
+    sigla: "UCB",
     cursos: [
-      "Sistemas de Informação", 
-      "Análise e Desenvolvimento de Sistemas"
+      {
+        nome: "Ciência da Computação",
+        tipo_de_graduacao: "Bacharelado",
+        modalidade: "Presencial",
+        duracao: "5 anos"
+      },
+      {
+        nome: "Licenciatura em Computação",
+        tipo_de_graduacao: "Licenciatura",
+        modalidade: "Presencial",
+        duracao: "4 anos"
+      },
+      {
+        nome: "Gestão de Tecnologia da Informação",
+        tipo_de_graduacao: "Tecnólogo",
+        modalidade: "EaD",
+        duracao: "2 anos"
+      }
     ],
-    grau: "Bacharelado/Tecnólogo",
-    modalidade: "Presencial e EAD",
-    observacoes: "Oferece programas com flexibilidade e bolsas de estudo",
-    logo: "udf.png",
-    cor: "bg-blue-700"
+    link: "https://ucb.catolica.edu.br/cursos/ead/gestao-tecnologia-informacao",
+    observacoes: "Reconhecida pela qualidade e tradição em cursos de TI",
+    cor: "bg-purple-700"
   },
   {
     id: 3,
-    sigla: "IESB",
-    nome: "Centro Universitário do IESB",
+    nome: "Centro Universitário do Distrito Federal (UDF)",
+    sigla: "UDF",
     cursos: [
-      "Engenharia de Computação", 
-      "Sistemas de Informação", 
-      "Gestão da TI"
+      {
+        nome: "Sistemas de Informação",
+        tipo_de_graduacao: "Bacharelado",
+        modalidade: "Presencial",
+        duracao: "4 anos"
+      },
+      {
+        nome: "Licenciatura em Informática",
+        tipo_de_graduacao: "Licenciatura",
+        modalidade: "Presencial",
+        duracao: "4 anos"
+      },
+      {
+        nome: "Análise e Desenvolvimento de Sistemas",
+        tipo_de_graduacao: "Tecnólogo",
+        modalidade: "Presencial",
+        duracao: "3 anos"
+      }
     ],
-    grau: "Bacharelado/Tecnólogo",
-    modalidade: "Presencial e EAD",
-    observacoes: "Focado em inovação, com ênfase em tecnologias emergentes",
-    logo: "iesb.png",
-    cor: "bg-green-600"
+    link: "https://cursos.udf.edu.br/grad-sistemas-de-informacao-udf/p",
+    observacoes: "Oferece programas com flexibilidade e bolsas de estudo",
+    cor: "bg-blue-700"
   },
   {
     id: 4,
+    nome: "Centro Universitário Estácio de Brasília",
     sigla: "Estácio Brasília",
-    nome: "Estácio de Brasília",
     cursos: [
-      "Sistemas de Informação", 
-      "Análise e Desenvolvimento de Sistemas", 
-      "Gestão da TI"
+      {
+        nome: "Ciência da Computação",
+        tipo_de_graduacao: "Bacharelado",
+        modalidade: "Presencial",
+        duracao: "5 anos"
+      },
+      {
+        nome: "Licenciatura em Computação",
+        tipo_de_graduacao: "Licenciatura",
+        modalidade: "Presencial",
+        duracao: "4 anos"
+      },
+      {
+        nome: "Gestão de Tecnologia da Informação",
+        tipo_de_graduacao: "Tecnólogo",
+        modalidade: "EaD",
+        duracao: "2,5 anos"
+      }
     ],
-    grau: "Bacharelado/Tecnólogo",
-    modalidade: "Presencial e EAD",
+    link: "https://estacio.br/cursos/graduacao/gestao-da-tecnologia-da-informacao",
     observacoes: "Proporciona flexibilidade de horários para atender diferentes perfis de alunos",
-    logo: "estacio.png",
     cor: "bg-yellow-600"
   },
   {
     id: 5,
-    sigla: "UCB",
-    nome: "Universidade Católica de Brasília",
+    nome: "Centro Universitário IESB",
+    sigla: "IESB",
     cursos: [
-      "Ciência da Computação", 
-      "Sistemas de Informação"
+      {
+        nome: "Sistemas de Informação",
+        tipo_de_graduacao: "Bacharelado",
+        modalidade: "Presencial",
+        duracao: "4 anos"
+      },
+      {
+        nome: "Licenciatura em Computação",
+        tipo_de_graduacao: "Licenciatura",
+        modalidade: "Presencial",
+        duracao: "4 anos"
+      },
+      {
+        nome: "Análise e Desenvolvimento de Sistemas",
+        tipo_de_graduacao: "Tecnólogo",
+        modalidade: "EaD",
+        duracao: "3 anos"
+      }
     ],
-    grau: "Bacharelado",
-    modalidade: "Presencial e EAD",
-    observacoes: "Reconhecida pela qualidade e tradição em cursos de TI",
-    logo: "ucb.png",
-    cor: "bg-purple-700"
-  },
-  {
-    id: 6,
-    sigla: "UNB",
-    nome: "Universidade de Brasília",
-    cursos: [
-      "Ciência da Computação", 
-      "Engenharia de Computação", 
-      "Sistemas de Informação"
-    ],
-    grau: "Bacharelado e Engenharia",
-    modalidade: "Presencial",
-    observacoes: "Referência histórica e acadêmica na área de TI no DF",
-    logo: "unb.png",
-    cor: "bg-green-800"
-  },
-  {
-    id: 7,
-    sigla: "UnDF",
-    nome: "Universidade do Distrito Federal",
-    cursos: [
-      "Sistemas de Informação", 
-      "Ciência da Computação", 
-      "Engenharia de Computação"
-    ],
-    grau: "Bacharelado/Tecnólogo",
-    modalidade: "Presencial",
-    observacoes: "Forte ênfase em pesquisa e inovação tecnológica",
-    logo: "undf.png",
-    cor: "bg-indigo-700"
-  },
-  {
-    id: 8,
-    sigla: "IFB",
-    nome: "Instituto Federal de Brasília",
-    cursos: [
-      "Análise e Desenvolvimento de Sistemas", 
-      "Redes de Computadores", 
-      "Segurança da Informação"
-    ],
-    grau: "Tecnólogo e Técnico",
-    modalidade: "Presencial e EAD",
-    observacoes: "Aprovado pela solidez na formação técnica e tecnológica",
-    logo: "ifb.png",
+    link: "https://www.iesb.br/tecnologia/",
+    observacoes: "Focado em inovação, com ênfase em tecnologias emergentes",
     cor: "bg-green-600"
   },
   {
-    id: 9,
+    id: 6,
+    nome: "Faculdade de Tecnologia e Inovação Senac-DF",
     sigla: "Senac DF",
-    nome: "Faculdade de Tecnologia e Inovação Senac DF",
     cursos: [
-      "Gestão da Tecnologia da Informação", 
-      "Desenvolvimento de Software"
+      {
+        nome: "Sistemas de Informação",
+        tipo_de_graduacao: "Bacharelado",
+        modalidade: "Presencial",
+        duracao: "4 anos"
+      },
+      {
+        nome: "Licenciatura em Computação",
+        tipo_de_graduacao: "Licenciatura",
+        modalidade: "Não ofertado",
+        duracao: "N/A"
+      },
+      {
+        nome: "Gestão da Tecnologia da Informação",
+        tipo_de_graduacao: "Tecnólogo",
+        modalidade: "Presencial",
+        duracao: "2 anos"
+      }
     ],
-    grau: "Tecnólogo",
-    modalidade: "Presencial e EAD",
+    link: "https://www.df.senac.br/curso/curso-superior-de-tecnologia-em-gestao-da-tecnologia-da-informacao/",
     observacoes: "Curso voltado à gestão e inovação digital, com metodologia prática",
-    logo: "senac.png",
     cor: "bg-orange-600"
   },
   {
-    id: 10,
-    sigla: "Uninassau",
-    nome: "Faculdade Uninassau Brasília",
+    id: 7,
+    nome: "Centro Universitário Planalto do Distrito Federal (UNIPLAN)",
+    sigla: "UNIPLAN",
     cursos: [
-      "Sistemas de Informação", 
-      "Ciência da Computação", 
-      "Análise e Desenvolvimento de Sistemas"
+      {
+        nome: "Sistemas de Informação",
+        tipo_de_graduacao: "Bacharelado",
+        modalidade: "Presencial",
+        duracao: "4 anos"
+      },
+      {
+        nome: "Licenciatura em Informática",
+        tipo_de_graduacao: "Licenciatura",
+        modalidade: "Presencial",
+        duracao: "4 anos"
+      },
+      {
+        nome: "Gestão da Tecnologia da Informação",
+        tipo_de_graduacao: "Tecnólogo",
+        modalidade: "Presencial",
+        duracao: "2 anos"
+      }
     ],
-    grau: "Bacharelado/Tecnólogo",
-    modalidade: "Presencial e EAD",
-    observacoes: "Conhecida pela alta empregabilidade de seus egressos",
-    logo: "uninassau.png",
-    cor: "bg-blue-600"
+    link: "https://www.uniplandf.edu.br/ensino/graduacao/tecnologicos/gestao_tecnologia_informacao.asp",
+    observacoes: "Oferece formação voltada para o mercado de trabalho",
+    cor: "bg-sky-600"
+  },
+  {
+    id: 8,
+    nome: "Centro Universitário do Planalto Central Apparecido dos Santos (UNICEPLAC)",
+    sigla: "UNICEPLAC",
+    cursos: [
+      {
+        nome: "Sistemas de Informação",
+        tipo_de_graduacao: "Bacharelado",
+        modalidade: "Presencial",
+        duracao: "4 anos"
+      },
+      {
+        nome: "Licenciatura em Computação",
+        tipo_de_graduacao: "Licenciatura",
+        modalidade: "Presencial",
+        duracao: "4 anos"
+      },
+      {
+        nome: "Análise e Desenvolvimento de Sistemas",
+        tipo_de_graduacao: "Tecnólogo",
+        modalidade: "Presencial",
+        duracao: "3 anos"
+      }
+    ],
+    link: "https://www.uniceplac.edu.br/?p=3590&post_type=curso",
+    observacoes: "Proporciona formação completa em sistemas de informação",
+    cor: "bg-lime-600"
+  },
+  {
+    id: 9,
+    nome: "Universidade de Brasília (UNB)",
+    sigla: "UNB",
+    cursos: [
+      {
+        nome: "Ciência da Computação",
+        tipo_de_graduacao: "Bacharelado",
+        modalidade: "Presencial",
+        duracao: "5 anos"
+      },
+      {
+        nome: "Licenciatura em Computação",
+        tipo_de_graduacao: "Licenciatura",
+        modalidade: "Presencial",
+        duracao: "4 anos"
+      },
+      {
+        nome: "Análise e Desenvolvimento de Sistemas",
+        tipo_de_graduacao: "Tecnólogo",
+        modalidade: "Não ofertado",
+        duracao: "N/A"
+      }
+    ],
+    link: "https://www.unb.br/portal/",
+    observacoes: "Referência histórica e acadêmica na área de TI no DF",
+    cor: "bg-green-800"
+  },
+  {
+    id: 10,
+    nome: "Instituto Federal de Brasília (IFB)",
+    sigla: "IFB",
+    cursos: [
+      {
+        nome: "Engenharia de Computação",
+        tipo_de_graduacao: "Bacharelado",
+        modalidade: "Presencial/EaD",
+        duracao: "5 anos"
+      },
+      {
+        nome: "Licenciatura em Computação",
+        tipo_de_graduacao: "Licenciatura",
+        modalidade: "Presencial",
+        duracao: "4 anos"
+      },
+      {
+        nome: "Análise e Desenvolvimento de Sistemas",
+        tipo_de_graduacao: "Tecnólogo",
+        modalidade: "Presencial/EaD",
+        duracao: "3 anos"
+      }
+    ],
+    link: "https://www.ifb.edu.br/",
+    observacoes: "Aprovado pela solidez na formação técnica e tecnológica",
+    cor: "bg-green-600"
   },
   {
     id: 11,
-    sigla: "Universo",
-    nome: "Faculdade Universo Brasília",
+    nome: "Centro Universitário Euro-Americano (UNIEURO)",
+    sigla: "UNIEURO",
     cursos: [
-      "Análise e Desenvolvimento de Sistemas", 
-      "Gestão da TI"
+      {
+        nome: "Sistemas de Informação",
+        tipo_de_graduacao: "Bacharelado",
+        modalidade: "Presencial",
+        duracao: "4 anos"
+      },
+      {
+        nome: "Licenciatura em Computação",
+        tipo_de_graduacao: "Licenciatura",
+        modalidade: "Presencial",
+        duracao: "4 anos"
+      },
+      {
+        nome: "Análise e Desenvolvimento de Sistemas",
+        tipo_de_graduacao: "Tecnólogo",
+        modalidade: "Presencial",
+        duracao: "3 anos"
+      }
     ],
-    grau: "Bacharelado/Tecnólogo",
-    modalidade: "Presencial e EAD",
-    observacoes: "Oferece uma variedade de formações que atendem a diferentes demandas do mercado",
-    logo: "universo.png",
-    cor: "bg-teal-600"
+    link: "https://www.unieuro.br/",
+    observacoes: "Foco em preparação para o mercado de trabalho",
+    cor: "bg-cyan-600"
+  },
+  {
+    id: 12,
+    nome: "Centro Universitário LS (UNILS)",
+    sigla: "UNILS",
+    cursos: [
+      {
+        nome: "Sistemas de Informação",
+        tipo_de_graduacao: "Bacharelado",
+        modalidade: "Presencial",
+        duracao: "4 anos"
+      },
+      {
+        nome: "Licenciatura em Informática",
+        tipo_de_graduacao: "Licenciatura",
+        modalidade: "Presencial",
+        duracao: "4 anos"
+      },
+      {
+        nome: "Análise e Desenvolvimento de Sistemas",
+        tipo_de_graduacao: "Tecnólogo",
+        modalidade: "Presencial",
+        duracao: "3 anos"
+      }
+    ],
+    link: "https://www.unils.br/",
+    observacoes: "Combina teoria e prática no ensino de TI",
+    cor: "bg-violet-600"
+  },
+  {
+    id: 13,
+    nome: "Faculdade Albert Einstein (FALBE)",
+    sigla: "FALBE",
+    cursos: [
+      {
+        nome: "Sistemas de Informação",
+        tipo_de_graduacao: "Bacharelado",
+        modalidade: "Presencial",
+        duracao: "4 anos"
+      },
+      {
+        nome: "Licenciatura em Computação",
+        tipo_de_graduacao: "Licenciatura",
+        modalidade: "Presencial",
+        duracao: "4 anos"
+      },
+      {
+        nome: "Análise e Desenvolvimento de Sistemas",
+        tipo_de_graduacao: "Tecnólogo",
+        modalidade: "Presencial",
+        duracao: "3 anos"
+      }
+    ],
+    link: "https://www.falbe.edu.br/",
+    observacoes: "Instituição com abordagem inovadora na formação tecnológica",
+    cor: "bg-amber-600"
+  },
+  {
+    id: 14,
+    nome: "Faculdade de Tecnologia CNA (FATECNA)",
+    sigla: "FATECNA",
+    cursos: [
+      {
+        nome: "Ciência da Computação",
+        tipo_de_graduacao: "Bacharelado",
+        modalidade: "Presencial",
+        duracao: "5 anos"
+      },
+      {
+        nome: "Licenciatura em Computação",
+        tipo_de_graduacao: "Licenciatura",
+        modalidade: "Presencial",
+        duracao: "4 anos"
+      },
+      {
+        nome: "Sistemas de Informação",
+        tipo_de_graduacao: "Tecnólogo",
+        modalidade: "Presencial",
+        duracao: "3 anos"
+      }
+    ],
+    link: "https://www.fatecna.edu.br/",
+    observacoes: "Cursos voltados para as demandas do agronegócio tecnológico",
+    cor: "bg-emerald-600"
+  },
+  {
+    id: 15,
+    nome: "Faculdade de Tecnologia Ícone (FACTI)",
+    sigla: "FACTI",
+    cursos: [
+      {
+        nome: "Sistemas de Informação",
+        tipo_de_graduacao: "Bacharelado",
+        modalidade: "Presencial",
+        duracao: "4 anos"
+      },
+      {
+        nome: "Licenciatura em Informática",
+        tipo_de_graduacao: "Licenciatura",
+        modalidade: "Presencial",
+        duracao: "4 anos"
+      },
+      {
+        nome: "Análise e Desenvolvimento de Sistemas",
+        tipo_de_graduacao: "Tecnólogo",
+        modalidade: "Presencial",
+        duracao: "3 anos"
+      }
+    ],
+    link: "https://www.facti.br/",
+    observacoes: "Conhecida pela formação prática em desenvolvimento",
+    cor: "bg-rose-600"
+  },
+  {
+    id: 16,
+    nome: "Faculdade JK de Tecnologia (FACJK)",
+    sigla: "FACJK",
+    cursos: [
+      {
+        nome: "Sistemas de Informação",
+        tipo_de_graduacao: "Bacharelado",
+        modalidade: "Presencial",
+        duracao: "4 anos"
+      },
+      {
+        nome: "Licenciatura em Computação",
+        tipo_de_graduacao: "Licenciatura",
+        modalidade: "Presencial",
+        duracao: "4 anos"
+      },
+      {
+        nome: "Análise e Desenvolvimento de Sistemas",
+        tipo_de_graduacao: "Tecnólogo",
+        modalidade: "Presencial",
+        duracao: "3 anos"
+      }
+    ],
+    link: "https://www.faculdadejk.com.br/",
+    observacoes: "Foco em tecnologias inovadoras e práticas de mercado",
+    cor: "bg-fuchsia-600"
+  },
+  {
+    id: 17,
+    nome: "Faculdade IBRA de Brasília (FADI)",
+    sigla: "FADI",
+    cursos: [
+      {
+        nome: "Sistemas de Informação",
+        tipo_de_graduacao: "Bacharelado",
+        modalidade: "Presencial",
+        duracao: "4 anos"
+      },
+      {
+        nome: "Licenciatura em Computação",
+        tipo_de_graduacao: "Licenciatura",
+        modalidade: "Presencial",
+        duracao: "4 anos"
+      },
+      {
+        nome: "Análise e Desenvolvimento de Sistemas",
+        tipo_de_graduacao: "Tecnólogo",
+        modalidade: "Presencial",
+        duracao: "3 anos"
+      }
+    ],
+    link: "https://www.ibra.edu.br/",
+    observacoes: "Oferece formação completa com laboratórios modernos",
+    cor: "bg-indigo-600"
+  },
+  {
+    id: 18,
+    nome: "Universidade do Distrito Federal (UnDF)",
+    sigla: "UnDF",
+    cursos: [
+      {
+        nome: "Ciência da Computação",
+        tipo_de_graduacao: "Bacharelado",
+        modalidade: "Presencial",
+        duracao: "5 anos"
+      },
+      {
+        nome: "Licenciatura em Computação",
+        tipo_de_graduacao: "Licenciatura",
+        modalidade: "Presencial",
+        duracao: "4 anos"
+      },
+      {
+        nome: "Análise e Desenvolvimento de Sistemas",
+        tipo_de_graduacao: "Tecnólogo",
+        modalidade: "Não ofertado",
+        duracao: "N/A"
+      }
+    ],
+    link: "https://www.un.df.br/",
+    observacoes: "Forte ênfase em pesquisa e inovação tecnológica",
+    cor: "bg-indigo-700"
+  },
+  {
+    id: 19,
+    nome: "Faculdade Projeção de Brasília",
+    sigla: "Projeção",
+    cursos: [
+      {
+        nome: "Sistemas de Informação",
+        tipo_de_graduacao: "Bacharelado",
+        modalidade: "Presencial",
+        duracao: "4 anos"
+      },
+      {
+        nome: "Licenciatura em Computação",
+        tipo_de_graduacao: "Licenciatura",
+        modalidade: "Presencial",
+        duracao: "4 anos"
+      },
+      {
+        nome: "Análise e Desenvolvimento de Sistemas",
+        tipo_de_graduacao: "Tecnólogo",
+        modalidade: "Presencial",
+        duracao: "3 anos"
+      }
+    ],
+    link: "https://www.projecao.edu.br/",
+    observacoes: "Conhecida pela qualidade do ensino e infraestrutura",
+    cor: "bg-blue-600"
+  },
+  {
+    id: 20,
+    nome: "Universidade Uninassau Brasília",
+    sigla: "Uninassau",
+    cursos: [
+      {
+        nome: "Sistemas de Informação",
+        tipo_de_graduacao: "Bacharelado",
+        modalidade: "Presencial",
+        duracao: "4 anos"
+      },
+      {
+        nome: "Licenciatura em Computação",
+        tipo_de_graduacao: "Licenciatura",
+        modalidade: "Presencial",
+        duracao: "4 anos"
+      },
+      {
+        nome: "Análise e Desenvolvimento de Sistemas",
+        tipo_de_graduacao: "Tecnólogo",
+        modalidade: "Presencial",
+        duracao: "3 anos"
+      }
+    ],
+    link: "https://www.uninassau.edu.br/",
+    observacoes: "Conhecida pela alta empregabilidade de seus egressos",
+    cor: "bg-blue-600"
   }
 ]
