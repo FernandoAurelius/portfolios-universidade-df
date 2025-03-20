@@ -1,23 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
-  <!-- Fundo circular -->
-  <circle cx="100" cy="100" r="90" fill="#4f46e5" />
-  <circle cx="100" cy="100" r="80" fill="#6366f1" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="200" height="200">
+  <!-- Fundo circular azul -->
+  <circle cx="12" cy="12" r="12" fill="#4f46e5"/>
   
-  <!-- Elemento gráfico representando tecnologia e educação -->
-  <path d="M100 40 L60 60 L60 140 L140 140 L140 60 Z" fill="#e0e7ff" stroke="#312e81" stroke-width="4" />
-  
-  <!-- Elemento de código -->
-  <path d="M75 90 L85 80 L95 90 L85 100 Z" fill="#312e81" />
-  <path d="M115 90 L105 80 L95 90 L105 100 Z" fill="#312e81" />
-  
-  <!-- Elemento de livro/educação -->
-  <rect x="70" y="110" width="60" height="10" rx="2" fill="#312e81" />
-  <rect x="75" y="120" width="50" height="4" rx="1" fill="#312e81" />
-  
-  <!-- Texto TechEdu (simplificado para ícone) -->
-  <path d="M50 170 h20 v-4 h-8 v-16 h-12 Z" fill="#ffffff" />
-  <path d="M75 170 v-20 h12 a8 8 0 0 1 8 8 v4 a8 8 0 0 1 -8 8 Z M87 150 h-4 v20 h4 a4 4 0 0 0 4 -4 v-12 a4 4 0 0 0 -4 -4 Z" fill="#ffffff" />
-  <path d="M100 170 v-20 h18 v4 h-10 v4 h8 v4 h-8 v4 h10 v4 Z" fill="#ffffff" />
-  <path d="M125 170 v-20 h12 a8 8 0 0 1 8 8 v4 a8 8 0 0 1 -8 8 Z M137 150 h-4 v20 h4 a4 4 0 0 0 4 -4 v-12 a4 4 0 0 0 -4 -4 Z" fill="#ffffff" />
-  <path d="M150 170 v-20 h12 a8 8 0 0 1 0 16 h-4 v4 Z M162 150 h-4 v12 h4 a4 4 0 0 0 0 -8 v-4 Z" fill="#ffffff" />
+  <!-- Ícone original do laptop -->
+  <path 
+    stroke-linecap="round" 
+    stroke-linejoin="round" 
+    stroke-width="1.5" 
+    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" 
+    stroke="white"
+    fill="none"
+  />
 </svg>
